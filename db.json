@@ -1,0 +1,80 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "name": "json-server",
+      "order": "typicode",
+      "phone": 744646463,
+      "address": "rail mat",
+      "email": "json@gmail.com"
+    },
+    {
+      "id": 2,
+      "name": "sam",
+      "order": "samosa",
+      "phone": 8874747474,
+      "address": "kolkata",
+      "email": "sam@gmail.com"
+    },
+    {
+      "id": 3,
+      "name": "ritu ",
+      "order": "jalebi, chop, sweet,rosogolla",
+      "phone": 75664366463,
+      "address": "durga mondir",
+      "email": "ram@gmail.com"
+    },
+    {
+      "id": 4,
+      "name": "rohit",
+      "order": "tea",
+      "phone": 9587575646,
+      "address": "kolkata",
+      "email": "kolkata@gmail.com"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "name": "suva",
+      "email": "suva@gmail.com",
+      "password": "suva12345",
+      "address": "bandhgora"
+    },
+    {
+      "name": "virat kholi",
+      "address": "kolkata",
+      "email": "virat@gmail.com",
+      "password": "5ffrwewr5werwerwe",
+      "id": 2
+    },
+    {
+      "name": "rohit",
+      "address": "mumbia",
+      "email": "rohit@gmail.com",
+      "password": "rohit12334",
+      "id": 3
+    },
+    {
+      "name": "bisal",
+      "address": "taldangra",
+      "email": "bisal@gmail.com",
+      "password": "bisal12345",
+      "id": 4
+    },
+    {
+      "name": "dam",
+      "address": "kolkata",
+      "email": "dam@gmail.com",
+      "password": "dam1234",
+      "id": 5
+    }
+  ]
+}

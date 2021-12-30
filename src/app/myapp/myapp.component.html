@@ -1,0 +1,152 @@
+<div class="container-fluid navbar__section">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">FoodHub</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" routerLink="/">Home</a>
+              </li>
+             
+              
+              <li class="nav-item">
+                <a class="nav-link" routerLink="/register">Register</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" routerLink="/login">Login</a>
+              </li>
+              <li *ngIf="userLogin" class="nav-item ml-5 mx-3">
+                <button class="btn btn-danger  ml-5" (click)="logOut()">Logout</button>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav> 
+
+</div>
+<!-- *******************end of navbar****************** -->
+
+
+
+
+
+<!-- *********************add order section ********* -->
+
+<div class="add__order__section my-5 mx-5">
+    <button type="button"
+
+    class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+      Add Order
+      </button>
+</div>
+
+
+<!-- **********************end order************ -->
+<!-- ****************model *************** -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <form  [formGroup]="formData">
+                <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label">Name</label>
+                    <input 
+                    formControlName="name"
+                    type="text" class="form-control" id="exampleInputPassword1">
+                  </div>
+                  <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label">Order</label>
+                    <input 
+                    formControlName="order"
+                    type="text" class="form-control" id="exampleInputPassword1">
+                  </div>
+                  <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label">phone no</label>
+                    <input 
+                    formControlName="phone"
+                    type="number" class="form-control" id="exampleInputPassword1">
+                  </div>
+
+                  <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label">Address</label>
+                    <input 
+                    formControlName="address"
+                    type="text" class="form-control" id="exampleInputPassword1">
+                  </div>
+
+                <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label">Email address</label>
+                  <input
+                  formControlName="email"
+                  type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                  <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                </div>
+              
+                
+                <button (click)="formSubmit()"  class="btn btn-primary mx-4">Submit</button>
+                <button (click)="EditData()"  class="btn btn-success mx-3">Update</button>
+              </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          
+         
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+<!-- ****************end model*************** -->
+
+
+<!-- ******************start tabel********** -->
+
+<table class="table container table-hover shadow">
+    <thead>
+      <tr class="bg-warning text-white">
+        <th scope="col">OrderId</th>
+        <th scope="col">Name</th>
+        <th scope="col">Order</th>
+        <th scope="col">Phone</th>
+        <th scope="col">Address</th>
+        <th scope="col">Email</th>
+        <th scope="col">Edit</th>
+        <th scope="col">Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+
+      <tr *ngFor="let order of AllData ">
+        <th scope="row">{{order.id}}</th>
+        <td>{{order.name}}</td>
+        <td>{{order.order}}</td>
+        <td>{{order.phone}}</td>
+        <td>{{order.address}}</td>
+        <td>{{order.email}}</td>
+        <td>
+            <button
+            (click)="EditOrder(order)"
+            type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                Edit Order
+                </button>
+        </td>
+        <td>
+           
+            <button (click)="deleteData(order.id)" class="btn btn-danger">
+           Delete
+            </button>
+        </td>
+
+      </tr>
+    
+     
+    </tbody>
+  </table>
